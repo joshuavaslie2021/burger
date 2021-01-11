@@ -1,0 +1,48 @@
+<h1>Burger Biter Tracker!</h1>
+<img src="assets/img/hamburger.gif" alt="hamburger">
+<h2 id="add">Add a burger</h2>
+<form class="create-burger">
+
+    <div class="form-group">
+        <label for="burger">What's your hamburger order?:</label>
+        <input type="text" id="burger" name="burger_name">
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg">Add burger</button>
+    
+</form>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h2>Burger list</h2>
+
+<ul>
+    {{#each burgers}}
+    {{#unless devoured}}
+    <li>
+        
+        <p>Order: {{burger_name}}<span><button class="change-devour btn btn-success" data-id="{{id}}" data-newdevour="{{devour}}">
+                    {{#if devour}}Demolished!{{else}}Inedible{{/if}}
+                </button></span></p>
+    </li>
+    {{/unless}}
+  {{/each}}
+
+</ul>
+    </div>
+    <div class="col-6">
+  <h2>Burgers consumed</h2>
+
+<ul>
+    {{#each burgers}}
+    {{#if devoured}}
+<p>{{burger_name}} Munched</p>
+    {{/if}}
+    {{/each}}
+</ul>
+    </div>
+  </div>
+</div>
+
+
+
