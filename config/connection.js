@@ -2,18 +2,19 @@ var mysql = require("mysql");
 
 
 
-var connection = mysql.createConnection(process.env.JAWSDB_URL);
+var connection;
 
-connection.connect();
-
-connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
-  if (err) throw err;
-
-  console.log('The solution is: ', rows[0].solution);
+if(process.env.JAWSDB_URL){
+    connection = mysql.createConnection(process.env.JAWSDB_URL)
+}
+else{connection = mysql.createConnection({
+  host: "localhost",
+  port: 3306,
+  user: "root",
+  password: "Password1",
+  database: "burgers_db"
 });
-
-connection.end();
-
+}
 
 
 connection.connect(function(err) {
