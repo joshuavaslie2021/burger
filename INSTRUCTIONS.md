@@ -138,7 +138,7 @@ Having an active and healthy commit history on GitHub is important for your futu
    * `burger.js`
 
 4. Create the `router` for the app, and export the `router` at the end of your file.
-
+ 
 #### View setup
 
 1. Inside your `burger` directory, create a folder named `views`.

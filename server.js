@@ -1,6 +1,6 @@
 // Dependencies
 var express = require("express");
-
+const path = require("path")
 
 // Set the port of our application
 // process.env.PORT lets the port be set by Heroku
